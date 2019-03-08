@@ -1,0 +1,61 @@
+from math import *
+
+print("""
+******************************************
+
+GELİŞMİŞ HESAP MAKİNESİ
+
+1.Toplama
+2.Çıkarma
+3.Çarpma
+4.Bölme
+5.Üs Alma
+6.Karekök Çıkarma
+7.En Büyük Ortak Böleni Bulma
+8.En Küçük Ortak Katı Bulma
+9.Faktöriyel Hesaplama
+10.Bölümden Kalan Bulma
+
+(Çıkmak için q'ya basın)
+
+*******************************************
+""")
+while True:
+    sayı1 = input("1. sayıyı giriniz:")
+    if sayı1 == "q":
+        print("Programdan çıkılıyor...")
+        break
+    sayı1 = int(sayı1)
+    işlem = int(input("Yapmak istediğiniz işlemi seçiniz:"))
+    if işlem == 6:
+        print("kök", sayı1,"=", int(sqrt(sayı1)), "olur")
+    elif işlem == 9:
+        print(sayı1, "faktöriyel", factorial(sayı1), "olur")
+
+    sayı2 = int(input("2. sayıyı giriniz:"))
+
+    if işlem == 1:
+        print("{} ile {} toplamı {} olur".format(sayı1, sayı2, sayı1 + sayı2))
+    elif işlem == 2:
+        print("{} ile {} farkı {} olur".format(sayı1, sayı2, sayı1 - sayı2))
+    elif işlem == 3:
+        print("{} ile {} çarpımı {} olur".format(sayı1, sayı2, sayı1 * sayı2))
+    elif işlem == 4:
+        print("{} ile {} bölümü {} olur".format(sayı1, sayı2, sayı1 // sayı2))
+    elif işlem == 5:
+        print(sayı1, "üzeri", sayı2, "=", int(pow(sayı1, sayı2)), "olur")
+    elif işlem == 7:
+        print(sayı1, "ile", sayı2, "sayısının en büyük ortak böleni", int(gcd(sayı1, sayı2)))
+    ebob = gcd(sayı1, sayı2)
+    if işlem == 8:
+        print(sayı1, "ile", sayı2, "sayısının en küçük ortak katı", int((sayı1 * sayı2) / ebob), "olur")
+    elif işlem == 10:
+        print(sayı1, "sayısının", sayı2, "ile bölümünden kalan", int(fmod(sayı1, sayı2)), "olur")
+    else:
+        print("Hatalı İşlem!")
+
+
+
+
+
+
