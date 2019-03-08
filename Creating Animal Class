@@ -1,0 +1,84 @@
+#Animal class
+class Hayvanlar():
+    def __init__(self, beslenme, yaşam_alanı, omurga, renk, cinsiyet):
+        self.beslenme = beslenme
+        self.yaşam_alanı = yaşam_alanı
+        self.omurga = omurga
+        self.renk = renk
+        self.cinsiyet = cinsiyet
+
+
+
+#Dog class and inheriting from animal class
+class Köpek(Hayvanlar):
+    def __init__(self, beslenme, yaşam_alanı, omurga, renk, cinsiyet, cins, kulak_şekli, tüy, kuyruk):
+        super().__init__(beslenme, yaşam_alanı, omurga, renk, cinsiyet)
+        self.cins = cins
+        self.kulak_şekli = kulak_şekli
+        self.tüy = tüy
+        self.kuyruk = kuyruk
+
+    def __str__(self):
+        return """
+        Hayvan Bilgileri:
+        Beslenme Şekli:{}
+        Yaşam Alanı:{}
+        Omurga Durumu:{}
+        Renk:{}
+        Cinsiyet:{}
+        Cins:{}
+        Kulak Şekli:{}
+        Tüy:{}
+        Kuyruk:{}
+        """.format(self.beslenme, self.yaşam_alanı, self.omurga, self.renk,self.cinsiyet, self.cins, self.kulak_şekli,
+                   self.tüy, self.kuyruk)
+#Bird class 
+class Kuş(Hayvanlar):
+    def __init__(self,beslenme,yaşam_alanı,omurga,renk,cinsiyet,cins,kuluçka,kanat):
+        super().__init__(beslenme,yaşam_alanı,omurga,renk,cinsiyet)
+        self.cins=cins
+        self.kuluçka=kuluçka
+        self.kanat=kanat
+    def __str__(self):
+        return """
+        Hayvan Bilgileri:
+        Beslenme Şekli:{}
+        Yaşam Alanı:{}
+        Omurga Durumu:{}
+        Renk:{}
+        Cinsiyet:{}
+        Cins:{}
+        Kuluçka Süresi:{}
+        Kanat Uzunluğu:{}
+        """.format(self.beslenme,self.yaşam_alanı,self.omurga,self.renk,self.cinsiyet,self.cins,self.kuluçka,self.kanat)
+#Horse class 
+class At(Hayvanlar):
+    def __init__(self,beslenme,yaşam_alanı,omurga,renk,cinsiyet,cins,hız,boy):
+        super().__init__(beslenme,yaşam_alanı,omurga,renk,cinsiyet)
+        self.cins=cins
+        self.hız=hız
+        self.boy=boy
+    def __str__(self):
+        return """
+        HAYVAN BİLGİLERİ
+        
+        Beslenme Şekli:{}
+        Yaşam Alanı:{}
+        Omurga Durumu:{}
+        Renk:{}
+        Cinsiyet:{}
+        Cins:{}
+        Hızı:{}
+        Boyu:{}
+        """.format(self.beslenme,self.yaşam_alanı,self.omurga,self.renk,self.cinsiyet,self.cins,self.hız,self.boy)
+#Creating Animal Objects
+Seyf=At("Otçul","Kara","Omurgalı","Siyah","Dişi","Arap Atı",230,"2m")
+print(Seyf)
+
+serçe=Kuş("Etçil,otçul","Hava","Omurgalı","Kahverengi","Erkek","Serçe","2 Hafta","15cm")
+print(serçe)
+
+atlas=Köpek("Otçul","Kara","Omurgalı","Beyaz-Turuncu","Erkek","Shiba İnu","Dik-Sivri","Kısa-Sert","Kıvrık")
+print(atlas)
+
+
