@@ -1,0 +1,23 @@
+import requests
+from bs4 import BeautifulSoup
+
+url =  "https://www.doviz.com"
+response =  requests.get(url) # Extracting data from web site
+
+html_icerigi = response.content  #Taking Content of Website
+
+soup =  BeautifulSoup(html_icerigi,"html.parser") # Sending to BeautifulSoup object to disjoint our website
+
+baslik=soup.find_all("span",{"class":"menu-row1"})
+değer=soup.find_all("span",{"class":"menu-row2"})
+
+for i,j in zip(baslik,değer):
+    i=i.text
+    i= i.strip()
+    i = i.replace("\n", "")
+
+    j = j.text
+    j = j.strip()
+    j = j.replace("\n", "")
+
+    print(i,j)
